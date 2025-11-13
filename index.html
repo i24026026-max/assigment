@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chiikawa - Home</title>
+    <link href="css/css.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<body class="fullscreen">
+    <main class="hero" role="main" aria-label="Hero">
+        <div class="hero-inner">
+            <h1 class="hero-title sr-only" data-title="chiikawa">chiikawa</h1>
+            <p class="hero-sub">Click anywhere for a little surprise ✨</p>
+        </div>
+
+        <svg class="hero-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+                <filter id="liquid-filter">
+                    <feTurbulence id="turbulence" type="turbulence" baseFrequency="0.006" numOctaves="2" seed="2" result="noise"/>
+                    <animate xlink:href="#turbulence" attributeName="baseFrequency" values="0.004;0.012;0.006" dur="5s" repeatCount="indefinite" />
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="28" xChannelSelector="R" yChannelSelector="G">
+                        <animate attributeName="scale" values="22;48;28" dur="5s" repeatCount="indefinite" />
+                    </feDisplacementMap>
+                </filter>
+            </defs>
+            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="liquid-text" filter="url(#liquid-filter)">chiikawa</text>
+        </svg>
+
+        <nav class="hero-actions" aria-label="Quick links">
+            <a class="hero-btn" href="https://www.chiikawaofficial.com/">Official Site</a>
+            <a class="hero-btn" href="index3.html">Comics</a>
+            <a class="hero-btn" href="index4.html">Shop</a>
+        </nav>
+
+        <canvas id="clickCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
